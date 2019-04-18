@@ -1,15 +1,40 @@
 package br.ufjf.dcc193.trabalho;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Membro
  */
 public class Membro {
-
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private long id;
     String nomeCompleto;
     String funcao;
     String email;
     String dataEntrada;
     String dataSaida;
+
+    public Membro(){
+
+    }
+
+    /**
+     * @return the id
+     */
+    public long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(long id) {
+        this.id = id;
+    }
 
     /**
      * @return the nomeCompleto

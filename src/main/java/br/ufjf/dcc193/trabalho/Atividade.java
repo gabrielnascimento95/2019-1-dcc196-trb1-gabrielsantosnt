@@ -1,16 +1,55 @@
 package br.ufjf.dcc193.trabalho;
 
+import java.util.ArrayList;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
 /**
  * Atividade
  */
 public class Atividade {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private long id;
+    Long idSede;
     String titulo;
     String descricao;
     String dataInicio;
     String dataFim;
     Float numHoras;
-    String categorias[] = {"assistencial", "juridica", "financeira", "executiva"};
+    ArrayList listcategorias = new ArrayList<Categorias>();
+
+    /**
+     * @return the id
+     */
+    public long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the idSede
+     */
+    public Long getIdSede() {
+        return idSede;
+    }
+
+    /**
+     * @param idSede the idSede to set
+     */
+    public void setIdSede(Long idSede) {
+        this.idSede = idSede;
+    }
 
     /**
      * @return the titulo
@@ -48,13 +87,17 @@ public class Atividade {
     }
 
     /**
-     * @return the categorias
+     * @return the listcategorias
      */
-    public String[] getCategorias() {
-        return categorias;
+    public ArrayList getListcategorias() {
+        return listcategorias;
     }
 
-    public String getExactCategoria(int i){
-        return this.categorias[i];
+    /**
+     * @param listcategorias the listcategorias to set
+     */
+    public void setListcategorias(ArrayList listcategorias) {
+        this.listcategorias = listcategorias;
     }
+
 }

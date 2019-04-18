@@ -20,4 +20,14 @@ class HomeController {
     public String formViewSede(){
         return "formViewSede";
     }
+
+    @RequestMapping({"", "formInsercaoSede.html"})
+    public String formInsercaoSede(){
+        return "formCadastroSede";
+    }
+
+    @RequestMapping({"", "formViewSede.html"})
+    public String formViewSede(){
+        return "formViewSede";
+    }
 }
