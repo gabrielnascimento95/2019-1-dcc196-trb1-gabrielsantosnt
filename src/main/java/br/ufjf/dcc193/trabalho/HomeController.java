@@ -31,7 +31,6 @@ class HomeController {
         return "formViewMembro";
     }
 
-
     @RequestMapping({"", "formInsercaoAtividade.html"})
     public String formInsercaoAtividade(){
         return "formCadastroAtividade";
