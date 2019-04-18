@@ -10,14 +10,32 @@
     <script src='main.js'></script>
 </head>
 <body>
-    <h3>Formulário de cadastro de nova sede</h3>
+    <h3>Formulário de cadastro de nova atividade</h3>
     <form action="visualizarSedes.html" method="POST"> 
-        <label>Nome fantasia: <input type="text" name="nome"/></label></br></br>
-        <label>Estado: <input type="text" name="estado"/></label></br></br>
-        <label>Cidade: <input type="text" name="cidade"/></label></br></br>
-        <label>Bairro: <input type="text" name="bairro"/></label></br></br>
-        <label>Telefone: <input type="tel" name="telefone" pattern="[0-9]{4}-[0-9]{4}" required/></label></br></br>
-        <label>Endereço WEB: <input type="url" name="site"/></label></br></br>
+        <label>Título: <input type="text" name="tituloAtividade"/></label></br></br>
+        <label>Descrição: <input type="text" name="descricaoAtividade"/></label></br></br>
+        <label>Data Início: <input type="date" name="dataInicioAtividade"/></label></br></br>
+        <label>Data Fim: <input type="date" name="dataFimAtividade"/></label></br></br>
+        <table id="atividade">
+            <tr>
+                <th>Atividades</th>
+                <th>Horas</th>
+                <th>Jurídica</th>
+                <th>Financeira</th>
+                <th>Executiva</th>
+            </tr>
+            <tr>
+                <td>
+                    <select name="tipoAtividade">
+                        <option value="0">Assistencial</option>
+                        <option value="1">Jurídica</option>
+                        <option value="2">Financeira</option>
+                        <option value="3">Executiva</option>
+                    </select>
+                </td>
+                <td><input type="number" name="horaAtividade"></td>
+            </tr>
+        </table>
         <input type="submit"/>
     </form>
 </body>

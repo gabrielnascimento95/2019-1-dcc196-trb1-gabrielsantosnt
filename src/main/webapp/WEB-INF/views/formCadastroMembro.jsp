@@ -10,14 +10,13 @@
     <script src='main.js'></script>
 </head>
 <body>
-    <h3>Formulário de cadastro de nova sede</h3>
+    <h3>Formulário de cadastro de novo membro</h3>
     <form action="visualizarSedes.html" method="POST"> 
-        <label>Nome fantasia: <input type="text" name="nome"/></label></br></br>
-        <label>Estado: <input type="text" name="estado"/></label></br></br>
-        <label>Cidade: <input type="text" name="cidade"/></label></br></br>
-        <label>Bairro: <input type="text" name="bairro"/></label></br></br>
-        <label>Telefone: <input type="tel" name="telefone" pattern="[0-9]{4}-[0-9]{4}" required/></label></br></br>
-        <label>Endereço WEB: <input type="url" name="site"/></label></br></br>
+        <label>Nome completo: <input type="text" name="nomeMembro"/></label></br></br>
+        <label>Função: <input type="text" name="funcao"/></label></br></br>
+        <label>E-mail: <input type="mail" name="emailMembro"/></label></br></br>
+        <label>Data Entrada: <input type="date" name="dataEntradaMembro"/></label></br></br>
+        <label>Data Saída: <input type="date" name="dataSaidaMebro"/></label></br></br>
         <input type="submit"/>
     </form>
 </body>
