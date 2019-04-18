@@ -21,13 +21,24 @@ class HomeController {
         return "formViewSede";
     }
 
-    @RequestMapping({"", "formInsercaoSede.html"})
-    public String formInsercaoSede(){
-        return "formCadastroSede";
+    @RequestMapping({"", "formInsercaoMembro.html"})
+    public String formInsercaoMembro(){
+        return "formCadastroMembro";
     }
 
-    @RequestMapping({"", "formViewSede.html"})
-    public String formViewSede(){
-        return "formViewSede";
+    @RequestMapping({"", "formViewMembro.html"})
+    public String formViewMembro(){
+        return "formViewMembro";
+    }
+
+
+    @RequestMapping({"", "formInsercaoAtividade.html"})
+    public String formInsercaoAtividade(){
+        return "formCadastroAtividade";
+    }
+
+    @RequestMapping({"", "formViewAtividade.html"})
+    public String formViewAtividade(){
+        return "formViewAtividade";
     }
 }
