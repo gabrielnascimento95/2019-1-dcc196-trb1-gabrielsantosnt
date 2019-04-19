@@ -1,7 +1,5 @@
 package br.ufjf.dcc193.trabalho;
 
-import java.util.ArrayList;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,27 +12,26 @@ public class Atividade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long id;
+    private long idAtividade;
     Long idSede;
     String titulo;
     String descricao;
     String dataInicio;
     String dataFim;
     Float numHoras;
-    ArrayList listcategorias = new ArrayList<Categorias>();
 
     /**
      * @return the id
      */
     public long getId() {
-        return id;
+        return idAtividade;
     }
 
     /**
      * @param id the id to set
      */
     public void setId(long id) {
-        this.id = id;
+        this.idAtividade = id;
     }
 
     /**
@@ -84,20 +81,6 @@ public class Atividade {
      */
     public Float getNumHoras() {
         return numHoras;
-    }
-
-    /**
-     * @return the listcategorias
-     */
-    public ArrayList getListcategorias() {
-        return listcategorias;
-    }
-
-    /**
-     * @param listcategorias the listcategorias to set
-     */
-    public void setListcategorias(ArrayList listcategorias) {
-        this.listcategorias = listcategorias;
     }
 
 }
