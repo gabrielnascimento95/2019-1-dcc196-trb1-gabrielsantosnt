@@ -1,25 +1,50 @@
 package br.ufjf.dcc193.trabalho.Models;
 
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  * Membro
  */
-public class Membro {
-    
+@Entity
+public class Membro implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private Sede sede;
     private long idMembro;
-    String nomeCompleto;
-    String funcao;
-    String email;
-    String dataEntrada;
-    String dataSaida;
+    private String nomeCompleto;
+    private String funcao;
+    private String email;
+    private String dataEntrada;
+    private String dataSaida;
 
     public Membro(){
 
+    }
+
+    public Membro(String nome, String funcao, String email, String data_entrada, String data_saida){
+        this.nomeCompleto = nome;
+        this.funcao = funcao;
+        this.email = email;
+        this.dataEntrada = data_entrada;
+        this.dataSaida = data_saida;
+    }
+
+    public Membro(Sede sede, String nome, String funcao, String email, String data_entrada, String data_saida){
+        this.sede = sede;
+        this.nomeCompleto = nome;
+        this.funcao = funcao;
+        this.email = email;
+        this.dataEntrada = data_entrada;
+        this.dataSaida = data_saida;
     }
 
     /**

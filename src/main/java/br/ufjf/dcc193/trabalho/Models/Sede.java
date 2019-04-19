@@ -1,5 +1,7 @@
 package br.ufjf.dcc193.trabalho.Models;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,20 +11,29 @@ import javax.persistence.Id;
  * Sede
  */
 @Entity
-public class Sede {
-    
+public class Sede implements Serializable{
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long id;
-    String nome;
-    String estado;
-    String cidade;
-    String bairro;
-    String telefone;
-    String site;
+    private Long id;
+    private String nome;
+    private String estado;
+    private String cidade;
+    private String bairro;
+    private Integer telefone;
+    private String site;
 
     public Sede(){
 
+    }
+
+    public Sede(String nome, String estado, String cidade, String bairro, Integer telefone, String site){
+        this.nome = nome;
+        this.estado = estado;
+        this.cidade = cidade;
+        this.bairro = bairro;
+        this.telefone = telefone;
+        this.site = site;
     }
 
     /**
@@ -70,7 +81,7 @@ public class Sede {
     /**
      * @return the telefone
      */
-    public String getTelefone() {
+    public Integer getTelefone() {
         return telefone;
     }
 
@@ -119,13 +130,13 @@ public class Sede {
     /**
      * @param telefone the telefone to set
      */
-    public void setTelefone(String telefone) {
+    public void setTelefone(Integer telefone) {
         this.telefone = telefone;
     }
 
     @Override
     public String toString() {
-        return "["+this.id+"] " + this.nome;
+        return super.toString();
     }
 
 }
