@@ -24,7 +24,7 @@ public class SedeController {
     @Autowired
     AtividadeRepository atividades;
 
-    @RequestMapping("listSedes.html")
+    @RequestMapping("formListSedes.html")
     public String sede(Model model){
         model.addAttribute("sede", sedesBd.findAll());
         List<Sede> sedesList = sedesBd.findAll();
@@ -44,12 +44,12 @@ public class SedeController {
         return "sede/formListSedes";
     }
 
-    @RequestMapping({"", "formInsercaoSede.html"})
+    @RequestMapping("formInsercaoSede.html")
     public String formInsercaoSede(){
         return "sede/formCadastroSede";
     }
 
-    @RequestMapping({"", "formInsercaoSedeSubmit.html"})
+    @RequestMapping("formInsercaoSedeSubmit.html")
     public String formInsercaoSedeSubmit(Sede sede){
         sedesBd.save(sede);
         return "sede/formCadastroSede";

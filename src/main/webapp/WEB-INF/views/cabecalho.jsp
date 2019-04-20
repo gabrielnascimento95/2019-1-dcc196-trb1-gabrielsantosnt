@@ -14,13 +14,13 @@
         <div id="navbar1">
             <ul>
                 <li>
-                    <a href="sede.html">Sedes</a>
+                    <a href="formListSedes.html">Sedes</a>
                 </li>
                 <li>
-                    <a href="membro.html">Membros</a>
+                    <a href="formListMembro.html">Membros</a>
                 </li>
                 <li>
-                    <a href="atividade.html">Atividades</a>
+                    <a href="formListAtividade.html">Atividades</a>
                 </li>
                 <li>
                     <a href="relatorio.html">Relatório</a>
