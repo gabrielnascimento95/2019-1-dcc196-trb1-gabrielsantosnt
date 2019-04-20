@@ -8,7 +8,7 @@ class HomeController {
 
     @RequestMapping({"", "index.html"})
     public String index(){
-        return "index";
+        return "home";
     }
 
     @RequestMapping({"", "sobre.html"})
