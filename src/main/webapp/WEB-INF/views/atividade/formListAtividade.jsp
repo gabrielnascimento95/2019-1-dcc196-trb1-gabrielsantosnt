@@ -23,7 +23,7 @@
                 <th>HoraFinanceira</th>
                 <th>Ações</th>
             </tr>
-            <c:forEach items="${atividade}" var="rep">
+            <c:forEach items="${atividades}" var="rep">
                 <tr>
                     <td>${rep.getSede().getNome()}</td>
                     <td>${rep.getTitulo()}</td>

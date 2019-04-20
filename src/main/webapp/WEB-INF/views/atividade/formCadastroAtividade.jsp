@@ -1,42 +1,44 @@
 <%@page pageEncoding="utf-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Criando nova sede</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-</head>
-<body>
-    <h3>Formulário de cadastro de nova atividade</h3>
-    <form action="visualizarSedes.html" method="POST"> 
-        <label>Título: <input type="text" name="tituloAtividade"/></label></br></br>
-        <label>Descrição: <input type="text" name="descricaoAtividade"/></label></br></br>
-        <label>Data Início: <input type="date" name="dataInicioAtividade"/></label></br></br>
-        <label>Data Fim: <input type="date" name="dataFimAtividade"/></label></br></br>
-        <table id="atividade">
-            <tr>
-                <th>Atividades</th>
-                <th>Horas</th>
-                <th>Jurídica</th>
-                <th>Financeira</th>
-                <th>Executiva</th>
-            </tr>
-            <tr>
-                <td>
-                    <select name="tipoAtividade">
-                        <option value="0">Assistencial</option>
-                        <option value="1">Jurídica</option>
-                        <option value="2">Financeira</option>
-                        <option value="3">Executiva</option>
-                    </select>
-                </td>
-                <td><input type="number" name="horaAtividade"></td>
-            </tr>
-        </table>
-        <input type="submit"/>
-    </form>
-</body>
-</html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:import url="/WEB-INF/views/cabecalho.jsp" />
+
+<div>
+    <div>
+        <h1 align="center">Atividades</h1>
+    </div>
+    <div>
+        <form class="text-left" action="formInsercaoAtividadeSubmit.html" method="POST">
+            <label>Sede:</label>
+            <select name="sedes">
+                <option value="">...</option>
+                <c:forEach var="rep" items="${sedes}">
+                    <option value="${rep.getId()}">
+                        ${rep.getNome()}
+                    </option>
+                </c:forEach>
+            </select>
+            <label>Título:</label>
+            <input type="text" name="titulo">
+            <label>Descrição:</label>
+            <input type="text" name="descricao">
+            <label>Hora Assistencial:</label>
+            <input type="number" name="horaAssistencial">
+            <label>Hora Jurídica:</label>
+            <input type="number" name="horaJuridica">
+            <label>Hora Executiva:</label>
+            <input type="number" name="horaExecutiva">
+            <label>Hora Financeira:</label>
+            <input type="number" name="horaFinanceira">
+            <label>Data início:</label>
+            <input name="dataInicio" type="text">
+            <label>Data fim:</label>
+            <input name="dataFim" type="text">
+            <div><br/>
+                <button type="submit">Enviar</button>
+                <a href="formListAtividade.html">Cancelar</a>
+            </div>
+        </form>
+    </div>
+    <div>Atividades</div>
+</div>
+<c:import url="/WEB-INF/views/rodape.jsp" />

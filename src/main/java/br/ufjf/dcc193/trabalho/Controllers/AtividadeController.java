@@ -42,7 +42,7 @@ public class AtividadeController {
     public ModelAndView carrega_sede_editar(@RequestParam(value = "id", required = true) Long id) {
         ModelAndView mv = new ModelAndView();
         mv.addObject("atividade", atividadesBd.getOne(id));
-        mv.addObject("sede", sedesBd.findAll());
+        mv.addObject("sedes", sedesBd.findAll());
         mv.setViewName("atividade/formEditaAtividade");
         return mv;
     }
