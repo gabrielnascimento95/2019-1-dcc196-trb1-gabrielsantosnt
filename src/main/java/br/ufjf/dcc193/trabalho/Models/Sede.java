@@ -1,20 +1,22 @@
 package br.ufjf.dcc193.trabalho.Models;
 
-import java.io.Serializable;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * Sede
  */
 @Entity
-public class Sede implements Serializable{
-    private static final long serialVersionUID = 1L;
+public class Sede{
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
     private String nome;
     private String estado;
@@ -22,6 +24,11 @@ public class Sede implements Serializable{
     private String bairro;
     private Integer telefone;
     private String site;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Membro> membros;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Atividade> atividades;
+
 
     public Sede(){
 

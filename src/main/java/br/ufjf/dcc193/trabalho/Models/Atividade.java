@@ -1,25 +1,19 @@
 package br.ufjf.dcc193.trabalho.Models;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 
 /**
  * Atividade
  */
 @Entity
-public class Atividade implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Atividade{
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    private Long idAtividade;
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    private Long id;
     Sede sede;
     String titulo;
     String descricao;
@@ -59,14 +53,14 @@ public class Atividade implements Serializable {
      * @return the id
      */
     public long getId() {
-        return idAtividade;
+        return id;
     }
 
     /**
      * @param id the id to set
      */
     public void setId(long id) {
-        this.idAtividade = id;
+        this.id = id;
     }
 
     /**

@@ -1,25 +1,21 @@
 package br.ufjf.dcc193.trabalho.Models;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+
 
 /**
  * Membro
  */
 @Entity
-public class Membro implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Membro {
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Sede sede;
-    private long idMembro;
+    private long id;
     private String nomeCompleto;
     private String funcao;
     private String email;
@@ -51,14 +47,14 @@ public class Membro implements Serializable {
      * @return the id
      */
     public long getId() {
-        return idMembro;
+        return id;
     }
 
     /**
      * @param id the id to set
      */
     public void setId(long id) {
-        this.idMembro = id;
+        this.id = id;
     }
 
     /**
