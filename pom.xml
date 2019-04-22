@@ -11,7 +11,7 @@
 	<groupId>br.ufjf.dcc193</groupId>
 	<artifactId>trabalho</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<name>Main</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -59,6 +59,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration> 
+					<mainClass>br.ufjf.dcc193.trabalho.MainApplication</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

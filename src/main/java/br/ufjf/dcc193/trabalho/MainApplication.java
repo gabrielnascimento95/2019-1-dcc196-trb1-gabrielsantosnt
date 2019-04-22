@@ -1,8 +1,12 @@
 package br.ufjf.dcc193.trabalho;
 
+import org.apache.catalina.Context;
+import org.apache.tomcat.util.scan.StandardJarScanner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Bean;
 
 import br.ufjf.dcc193.trabalho.Models.Atividade;
 import br.ufjf.dcc193.trabalho.Models.Membro;
@@ -43,6 +47,15 @@ public class MainApplication {
 		bancoAtividade.save(atividade1);
 		bancoAtividade.save(atividade2);
 		bancoAtividade.save(atividade3);
+	}
+	
+	@Bean
+	public TomcatServletWebServerFactory tomcatFactory() {
+   		return new TomcatServletWebServerFactory() {
+      @Override
+      protected void postProcessContext(Context context) {
+         ((StandardJarScanner) context.getJarScanner()).setScanManifest(false);
+	   }};
 	}
 
 }
