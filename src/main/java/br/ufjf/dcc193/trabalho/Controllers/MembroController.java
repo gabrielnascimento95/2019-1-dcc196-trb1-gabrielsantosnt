@@ -27,13 +27,13 @@ public class MembroController {
         return "membro/formListMembro";
     }
 
-    @RequestMapping({"", "formInsercaoMembro.html"})
+    @RequestMapping("formInsercaoMembro.html")
     public String formInsercaoMembro(Model modelo){
         modelo.addAttribute("sedes", sedesBd.findAll());
         return "membro/formCadastroMembro";
     }
 
-    @RequestMapping({"", "formInsercaoMembroSubmit.html"})
+    @RequestMapping("formInsercaoMembroSubmit.html")
     public String formMembroSubmit(Membro membro){
         membrosBd.save(membro);
         return "membro/formCadastroMembro";

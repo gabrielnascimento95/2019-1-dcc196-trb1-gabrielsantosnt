@@ -1,23 +1,39 @@
 <%@page pageEncoding="utf-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Criando nova sede</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-</head>
-<body>
-    <h3>Formulário de cadastro de novo membro</h3>
-    <form action="visualizarSedes.html" method="POST"> 
-        <label>Nome completo: <input type="text" name="nomeMembro"/></label></br></br>
-        <label>Função: <input type="text" name="funcao"/></label></br></br>
-        <label>E-mail: <input type="mail" name="emailMembro"/></label></br></br>
-        <label>Data Entrada: <input type="date" name="dataEntradaMembro"/></label></br></br>
-        <label>Data Saída: <input type="date" name="dataSaidaMebro"/></label></br></br>
-        <input type="submit"/>
-    </form>
-</body>
-</html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:import url="/WEB-INF/views/cabecalho.jsp" />
+<div>
+    <div>
+        <h1 align="center">Membros</h1>
+    </div>
+    <div>
+        <form class="text-left" action="formInsercaoMembroSubmit.html" method="POST">
+            <label>Sede:</label>
+            <select name="sede">
+                <option value="">...</option>
+                <c:forEach var="rep" items="${sedes}">
+                    <option value="${rep.id}">
+                        ${rep.getNome()}
+                    </option>
+                </c:forEach>
+            </select>
+            <label>Nome:</label>
+            <input type="text" name="nome">
+            <label>Função:</label>
+            <input type="text" name="funcao">
+            <label>Email:</label>
+            <input type="email" name="email" type="text">
+            <label>Data entrada:</label>
+            <input name="dataEntrada" type="text">
+            <label>Data saída:</label>
+            <input name="dataSaida" type="text">
+            <div><br/>
+                <button type="submit">Salvar</button>
+                <a href="formListMembro.html">Cancelar</a>
+            </div>
+        </form>
+    </div>
+    <div>
+        Membros
+    </div>
+</div>
+<c:import url="/WEB-INF/views/rodape.jsp" />
