@@ -42,7 +42,7 @@ public class HomeController {
     }
 //--------------------------------------------------------------------------------------------
     @RequestMapping("formEditaSede.html")
-    public ModelAndView formeditasede(@RequestParam Long id){
+    public ModelAndView formEditaSede(@RequestParam Long id){
         ModelAndView mv = new ModelAndView();
         mv.setViewName("formEditaSede");
         mv.addObject("sede", Sedes.getOne(id));
@@ -50,7 +50,7 @@ public class HomeController {
     }
 
     @RequestMapping("formEditaSedeSubmit.html")
-    public RedirectView editasede(Sede sede){
+    public RedirectView formEditaSedeSubmit(Sede sede){
         Sede auxSede = Sedes.getOne(sede.getId());
         auxSede.setNome(sede.getNome());
         auxSede.setEstado(sede.getEstado());
@@ -62,153 +62,151 @@ public class HomeController {
         return new RedirectView("sedeView.html?id=" + sede.getId());
     }
 
-    @RequestMapping("formnovasede.html")
-    public String formnovasede(){
-        return "formnovasede";
+    @RequestMapping("formNovaSede.html")
+    public String formNovaSede(){
+        return "formNovaSede";
     }
 
-    @RequestMapping("novasede.html")
-    public RedirectView novasede(Sede sede){
+    @RequestMapping("formNovaSedeSubmit.html")
+    public RedirectView formNovaSedeSubmit(Sede sede){
         Sedes.save(sede);
         return new RedirectView("index.html");
     }
 
-    @RequestMapping("deletasede.html")
-    public String deletasede(@RequestParam Long id){
+    @RequestMapping("formDeletaSede.html")
+    public String formDeletaSede(@RequestParam Long id){
         Sedes.deleteById(id);
-        return "deletasede";
+        return "formDeletaSede";
     }
 
-    @RequestMapping("visualizasede.html")
-    public ModelAndView visualizasede(@RequestParam Long id){
+    @RequestMapping("sedeView.html")
+    public ModelAndView sedeView(@RequestParam Long id){
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("visualizasede");
+        mv.setViewName("sedeView");
         mv.addObject("sede", Sedes.getOne(id));
         return mv;
     }
 
     ///--------------------------------------------------------------------------------------------
 
-    @RequestMapping("formeditamembro.html")
-    public ModelAndView formeditamembro(@RequestParam Long id, @RequestParam Long idSede){
+    @RequestMapping("formEditaMembro.html")
+    public ModelAndView formEditaMembro(@RequestParam Long id, @RequestParam Long idSede){
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("formeditamembro");
-        mv.addObject("membro", repMembros.getOne(id));
+        mv.setViewName("formEditaMembro");
+        mv.addObject("membro", Membros.getOne(id));
         mv.addObject("idSede", idSede);
         return mv;
     }
 
-    @RequestMapping("editamembro.html")
-    public RedirectView editamembro(Membro membro, @RequestParam Long id, @RequestParam Long idSede){
-        Membro updateMembro = repMembros.getOne(id);
-        updateMembro.setNome(membro.getNome());
-        updateMembro.setFuncao(membro.getFuncao());
-        updateMembro.setEmail(membro.getEmail());
-        updateMembro.setDataEntrada(membro.getDataEntrada());
-        updateMembro.setDataEntrada(membro.getDataSaida());
-        repMembros.save(updateMembro);
-        return new RedirectView("visualizasede.html?id="+idSede);
+    @RequestMapping("formEditaMembroSubmit.html")
+    public RedirectView formEditaMembroSubmit(Membro membro, @RequestParam Long id, @RequestParam Long idSede){
+        Membro auxMembro = Membros.getOne(id);
+        auxMembro.setNome(membro.getNome());
+        auxMembro.setFuncao(membro.getFuncao());
+        auxMembro.setEmail(membro.getEmail());
+        auxMembro.setDataEntrada(membro.getDataEntrada());
+        auxMembro.setDataEntrada(membro.getDataSaida());
+        Membros.save(auxMembro);
+        return new RedirectView("sedeView.html?id="+idSede);
     }
 
-    @RequestMapping("formnovomembro.html")
-    public ModelAndView formnovomembro(@RequestParam Long idSede){
+    @RequestMapping("formNovoMembro.html")
+    public ModelAndView formNovoMembro(@RequestParam Long idSede){
         ModelAndView mv = new ModelAndView();
         System.err.println(idSede);
         mv.addObject("idSede", idSede);
         return mv;
     }
 
-    @RequestMapping("novomembro.html")
-    public RedirectView novomembro(Membro membro, Long idSede){
-        repMembros.save(membro);
-        Sede sede1 = repSedes.getOne(idSede);
+    @RequestMapping("formNovoMembroSubmit.html")
+    public RedirectView formNovoMembroSubmit(Membro membro, Long idSede){
+        Membros.save(membro);
+        Sede sede1 = Sedes.getOne(idSede);
         sede1.addMembro(membro);
-        repSedes.save(sede1);
-        return new RedirectView("visualizasede.html?id=" + idSede);
+        Sedes.save(sede1);
+        return new RedirectView("sedeView.html?id=" + idSede);
     }
 
-    @RequestMapping("deletamembro.html")
-    public ModelAndView deletamembro(@RequestParam Long id, @RequestParam Long idSede){
+    @RequestMapping("formDeletaMembro.html")
+    public ModelAndView formDeletaMembro(@RequestParam Long id, @RequestParam Long idSede){
         ModelAndView mv = new ModelAndView();
-        System.err.println("Membro: " + id);
-        System.err.println("Sede: " + idSede);
         mv.addObject("idSede", idSede);
         mv.setViewName("deletamembro");
-        Membro membro = repMembros.getOne(id);
-        Sede sede1 = repSedes.getOne(idSede);
-        sede1.removeMembro(membro);
-        repMembros.deleteById(id);
+        Membro membro = Membros.getOne(id);
+        Sede auxSede = Sedes.getOne(idSede);
+        auxSede.removeMembro(membro);
+        Membros.deleteById(id);
         return mv;
     }
 
     ///------------------------------------------------------------------------------------------
 
-    @RequestMapping("formnovaatividade.html")
-    public ModelAndView formnovaatividade(@RequestParam Long idSede){
+    @RequestMapping("formNovaAtividade.html")
+    public ModelAndView formNovaAtividade(@RequestParam Long idSede){
         ModelAndView mv = new ModelAndView();
         System.err.println(idSede);
         mv.addObject("idSede", idSede);
         return mv;
     }
 
-    @RequestMapping("novaatividade.html")
-    public RedirectView novaatividade(Atividade atividade, Long idSede){
-        System.err.println(idSede);
-        System.err.println(atividade.getCategoria().toString());
-        repAtividades.save(atividade);
-        Sede sede1 = repSedes.getOne(idSede);
-        sede1.addAtividade(atividade);
-        repSedes.save(sede1);
-        return new RedirectView("visualizasede.html?id=" + idSede);
+    @RequestMapping("formNovaAtividadeSubmit.html")
+    public RedirectView formNovaAtividadeSubmit(Atividade atividade, Long idSede){
+        //System.err.println(idSede);
+        //System.err.println(atividade.getCategoria().toString());
+        Atividades.save(atividade);
+        Sede auxSede = Sedes.getOne(idSede);
+        auxSede.addAtividade(atividade);
+        Sedes.save(auxSede);
+        return new RedirectView("sedeView.html?id=" + idSede);
     }
 
-    @RequestMapping("deletaatividade.html")
-    public ModelAndView deletaatividade(@RequestParam Long id, @RequestParam Long idSede){
+    @RequestMapping("formDeletaAtividade.html")
+    public ModelAndView formDeletaAtividade(@RequestParam Long id, @RequestParam Long idSede){
         ModelAndView mv = new ModelAndView();
-        System.err.println("Atividade: " + id);
-        System.err.println("Sede: " + idSede);
+        //System.err.println("Atividade: " + id);
+        //System.err.println("Sede: " + idSede);
         mv.addObject("idSede", idSede);
         mv.setViewName("formDeletaAtividade");
-        Atividade atividade = repAtividades.getOne(id);
-        Sede sede1 = repSedes.getOne(idSede);
-        sede1.removeAtividade(atividade);
-        repAtividades.deleteById(id);
+        Atividade atividade = Atividades.getOne(id);
+        Sede auxSede = Sedes.getOne(idSede);
+        auxSede.removeAtividade(atividade);
+        Atividades.deleteById(id);
         return mv;
     }
 
-    @RequestMapping("formeditaatividade.html")
-    public ModelAndView formeditaatividade(@RequestParam Long id, @RequestParam Long idSede){
+    @RequestMapping("formEditaAtividade.html")
+    public ModelAndView formEditaAtividade(@RequestParam Long id, @RequestParam Long idSede){
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("formeditaatividade");
-        mv.addObject("atividade", repAtividades.getOne(id));
+        mv.setViewName("formEditaAtividade");
+        mv.addObject("atividade", Atividades.getOne(id));
         mv.addObject("idSede", idSede);
         return mv;
     }
 
     @RequestMapping("formEditaAtividadeSubmit.html")
-    public RedirectView editaatividade(Atividade atividade, @RequestParam Long id, @RequestParam Long idSede){
-        Atividade updateAtividade = repAtividades.getOne(id);
-        updateAtividade.setTitulo(atividade.getTitulo());
-        updateAtividade.setDescricao(atividade.getDescricao());
-        updateAtividade.setDataInicio(atividade.getDataInicio());
-        updateAtividade.setDataFim(atividade.getDataFim());
-        updateAtividade.setDuracao(atividade.getDuracao());
-        updateAtividade.setCategoria(atividade.getCategoria());
-        repAtividades.save(updateAtividade);
-        return new RedirectView("visualizasede.html?id="+idSede);
+    public RedirectView formEditaAtividadeSubmit(Atividade atividade, @RequestParam Long id, @RequestParam Long idSede){
+        Atividade auxAtividade = Atividades.getOne(id);
+        auxAtividade.setTitulo(atividade.getTitulo());
+        auxAtividade.setDescricao(atividade.getDescricao());
+        auxAtividade.setDataInicio(atividade.getDataInicio());
+        auxAtividade.setDataFim(atividade.getDataFim());
+        auxAtividade.setDuracao(atividade.getDuracao());
+        auxAtividade.setCategoria(atividade.getCategoria());
+        Atividades.save(auxAtividade);
+        return new RedirectView("sedeView.html?id="+idSede);
     }
 
     ///-------------------------------------------------------------------------------------------
     
-    @RequestMapping("relatorioduracaototal.html")
-    public ModelAndView relatorioduracaototal(@RequestParam Long id){
+    @RequestMapping("relatorioView.html")
+    public ModelAndView relatorioView(@RequestParam Long id){
         ModelAndView mv = new ModelAndView();
         int duracaoTotal = 0;
         int duracaoFinanceira = 0;
         int duracaoExecutiva = 0;
         int duracaoJuridica = 0;
         int duracaoAssistencial = 0;
-        Sede sede = repSedes.getOne(id);
+        Sede sede = Sedes.getOne(id);
         for (Atividade a : sede.getAtividades()) {
             System.err.println(a.getCategoria());
             if(a.getCategoria().equals(Categoria.Financeira)){
