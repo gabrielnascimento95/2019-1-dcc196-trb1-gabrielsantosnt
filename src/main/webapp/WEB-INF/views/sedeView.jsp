@@ -27,7 +27,6 @@
                 <input type="submit" value="Editar"/>
             </form>
         </div>
-        <
             <div>
                 <h2>Membros</h2>
                 <ul id="membro" name="membro">      
@@ -59,11 +58,12 @@
         
         <div>
             <div>
-                <a href="index.html">Voltar</a> 
+                <a href="relatorioView.html?id=${sede.id}">Relatório</a>
             </div>
             <div>
-                <a href="relatorioView.html?id=${sede.id}">Relatório</a>
-            </div>           
+                <a href="index.html">Voltar</a> 
+            </div>
+                       
         </div>
 
     </div>

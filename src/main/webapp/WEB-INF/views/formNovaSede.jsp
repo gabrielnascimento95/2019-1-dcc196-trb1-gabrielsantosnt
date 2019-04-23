@@ -37,7 +37,7 @@
                 </div>
                 <div >
                     <label>Endereço Web </label>
-                    <input type="text" id="enderecoWeb" name="enderecoWeb"/>
+                    <input type="text" id="url" name="url"/>
                 </div>
             </div>
             <input type="submit" value="Salvar" />

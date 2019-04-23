@@ -34,13 +34,13 @@ public class Sede {
 
     }
 
-    public Sede(String nome, String estado, String cidade, String bairro, String telefone, String enderecoWeb){
+    public Sede(String nome, String estado, String cidade, String bairro, String telefone, String url){
         this.nome = nome;
         this.estado = estado;
         this.cidade = cidade;
         this.bairro = bairro;
         this.telefone = telefone;
-        this.url = enderecoWeb;
+        this.url = url;
         listMembros = new ArrayList<Membro>();
         listAtividades = new ArrayList<Atividade>();
     }

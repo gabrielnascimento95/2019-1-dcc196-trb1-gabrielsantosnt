@@ -220,7 +220,7 @@ public class HomeController {
             }
         }
         duracaoTotal = duracaoAssistencial + duracaoExecutiva + duracaoFinanceira + duracaoJuridica;
-        mv.setViewName("relatorioduracaototal");
+        mv.setViewName("relatorioView");
         mv.addObject("duracaoTotal", duracaoTotal);
         mv.addObject("duracaoJuridica", duracaoJuridica);
         mv.addObject("duracaoFinanceira", duracaoFinanceira);

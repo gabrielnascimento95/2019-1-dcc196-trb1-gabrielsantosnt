@@ -10,11 +10,11 @@
 <body>
     <div>
     
-        <h1>Gerenciamento de ONGS</h1>
+        <h1>Gerenciamento de ONGs</h1>
 
         <div>
             <div>
-                    <a href="formNovaSede.html">Nova</a>    
+                <a href="formNovaSede.html">Nova</a>    
             </div>      
         </div>
     
@@ -23,16 +23,12 @@
         <h2>Sedes </h2>
             <ul id="sede" name="sede">      
                 <c:forEach var="sede" items="${sedes}">         
-                    <li value="${sede.id}">  <a href="formDeletaSede.html?id=${sede.id}"> X 
-                    </a> <a href="sedeView.html?id=${sede.id}"> ${sede.nome} </a>    
+                    <li value="${sede.id}">
+                    <a href="sedeView.html?id=${sede.id}"> ${sede.nome}</a>        
+                    <a href="formDeletaSede.html?id=${sede.id}">Excluir</a>   
                 </c:forEach>   
             </ul>      
         </div>
-
-    
-        
-
     </div>
-
 </body>
 </html>
