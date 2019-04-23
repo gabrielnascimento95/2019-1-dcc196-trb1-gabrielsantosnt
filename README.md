@@ -1,6 +1,10 @@
 Laboratório de Programação de Sistemas Web II - DCC193
 Trabalho Pŕático
+
+
 Aluno: Gabriel dos Santos Nascimento 
+
+
 E-mail: gabriel.nascimento@ice.ufjf.br
 
 Instruções para o funcionamento do sistema:
