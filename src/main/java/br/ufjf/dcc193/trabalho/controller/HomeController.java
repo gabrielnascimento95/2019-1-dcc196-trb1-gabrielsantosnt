@@ -1,5 +1,6 @@
 package br.ufjf.dcc193.trabalho.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,6 @@ import org.springframework.web.servlet.view.RedirectView;
 import br.ufjf.dcc193.trabalho.model.Atividade;
 import br.ufjf.dcc193.trabalho.model.Membro;
 import br.ufjf.dcc193.trabalho.model.Sede;
-import br.ufjf.dcc193.trabalho.model.Atividade.Categoria;
 import br.ufjf.dcc193.trabalho.persistence.AtividadeRepository;
 import br.ufjf.dcc193.trabalho.persistence.MembroRepository;
 import br.ufjf.dcc193.trabalho.persistence.SedeRepository;
@@ -193,7 +193,7 @@ public class HomeController {
     }
 
     ///-------------------------------------------------------------------------------------------
-    
+    /*
     @RequestMapping("relatorioView.html")
     public ModelAndView relatorioView(@RequestParam Long id){
         ModelAndView mv = new ModelAndView();
@@ -223,6 +223,27 @@ public class HomeController {
         mv.addObject("duracaoExecutiva", duracaoExecutiva);
         mv.addObject("duracaoAssistencial", duracaoAssistencial);
         mv.addObject("id", id);
+        return mv;
+    }
+    */
+
+    @RequestMapping("relatorioView.html")
+    public ModelAndView relatorioView(@RequestParam Long id){
+        ModelAndView mv = new ModelAndView();
+        int duracao = 0;
+        List<Sede> listSedes = Sedes.findAll();
+        List<Integer> listTempoTotal = new ArrayList<>();
+
+        for(Sede aux : listSedes){
+            for (Atividade a : aux.getAtividades()){
+                duracao += a.getDuracao();
+            }
+            listTempoTotal.add(duracao);
+            duracao = 0;
+        }
+        mv.setViewName("relatorio");
+        mv.addObject("sedes", listSedes);
+        mv.addObject("tempoTotal", listTempoTotal);
         return mv;
     }
     

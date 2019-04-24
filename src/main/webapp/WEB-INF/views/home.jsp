@@ -15,6 +15,9 @@
         <div>
             <div>
                 <a href="formNovaSede.html">Nova</a>    
+            </div>
+            <div>
+                <a href="relatorioView.html">Relatório Completo</a>    
             </div>      
         </div>
     

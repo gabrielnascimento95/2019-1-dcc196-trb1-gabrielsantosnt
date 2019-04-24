@@ -8,18 +8,24 @@
 </head>
 <body>
     <div>
-        <h1>Relatório</h1>
+        <h1>Relatório Completo</h1>
         <div>
-            Duração Jurídica: ${duracaoJuridica}<br><br>
-            Duração Assistencial: ${duracaoAssistencial}<br><br>
-            Duração Financeira: ${duracaoFinanceira}<br><br>
-            Duração Executiva: ${duracaoExecutiva}<br><br>
-            Duração Total: ${duracaoTotal}<br><br>
+            <ul id="listaSede" name="listaSede">      
+                <c:forEach var="item" items="${sedes}">         
+                    <li value="${item.id}"> ${sede.nome}     
+                </c:forEach>
+            </ul>
+        </div>
+        <div>
+            <ul id="listaDuracao" name="listaDuracao">      
+                <c:forEach var="item" items="${tempoTotal}">         
+                    <li value="${item}"> ${duracao}     
+                </c:forEach>
+            </ul>
         </div>      
-        <div >
-            <a href="sedeView.html?id=${id}">Voltar</a>    
-        </div>      
-    </div>
-
+    </div>    
+    <div >
+        <a href="sedeView.html?id=${id}">Voltar</a>    
+    </div>      
 </body>
 </html>
