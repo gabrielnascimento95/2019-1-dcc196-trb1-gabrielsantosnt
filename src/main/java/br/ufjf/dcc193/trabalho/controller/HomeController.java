@@ -151,8 +151,6 @@ public class HomeController {
 
     @RequestMapping("formNovaAtividadeSubmit.html")
     public RedirectView formNovaAtividadeSubmit(Atividade atividade, Long idSede){
-        //System.err.println(idSede);
-        //System.err.println(atividade.getCategoria().toString());
         Atividades.save(atividade);
         Sede auxSede = Sedes.getOne(idSede);
         auxSede.addAtividade(atividade);
@@ -163,8 +161,6 @@ public class HomeController {
     @RequestMapping("formDeletaAtividade.html")
     public ModelAndView formDeletaAtividade(@RequestParam Long id, @RequestParam Long idSede){
         ModelAndView mv = new ModelAndView();
-        //System.err.println("Atividade: " + id);
-        //System.err.println("Sede: " + idSede);
         mv.addObject("idSede", idSede);
         mv.setViewName("formDeletaAtividade");
         Atividade atividade = Atividades.getOne(id);

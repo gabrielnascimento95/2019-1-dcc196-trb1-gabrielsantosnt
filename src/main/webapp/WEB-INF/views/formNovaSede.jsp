@@ -36,7 +36,7 @@
                     <input type="text" id="telefone" name="telefone"/>
                 </div>
                 <div >
-                    <label>Endereço Web </label>
+                    <label>URL</label>
                     <input type="text" id="url" name="url"/>
                 </div>
             </div>

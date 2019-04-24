@@ -8,7 +8,7 @@
 </head>
 <body>
     <div>
-        <h1>Formulário: Nova Atividade</h1>
+        <h1>Nova Atividade</h1>
         <form role="form" action="formNovaAtividadeSubmit.html" method="POST">
             <div>
                 <div >
@@ -16,7 +16,7 @@
                     <input type="text" id="titulo" name="titulo"/>
                 </div>
                 <div >
-                    <label>Descrição </label> 
+                    <label>Descrição</label> 
                     <input type="text" id="descricao" name="descricao"/>
                 </div>
             </div>

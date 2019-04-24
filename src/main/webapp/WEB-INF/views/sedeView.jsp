@@ -9,9 +9,7 @@
 </head>
 <body>
     <div>
-    
         <h1>Sede ${sede.nome}</h1>
-
         <div>
             <ul>
                 <li>${sede.estado}</li>
@@ -21,7 +19,6 @@
                 <li>${sede.url}</li>
             </ul>           
         </div>
-
         <div>
             <form role="form" action="formEditaSede.html?id=${sede.id}" method="POST">
                 <input type="submit" value="Editar"/>
@@ -36,7 +33,6 @@
                     </c:forEach>   
                 </ul>      
             </div>
-
             <div>
                 <h2>Atividades </h2>
                 <ul id="atividade" name="atividade">      
@@ -46,7 +42,6 @@
                     </c:forEach>   
                 </ul>      
             </div>
-
         <div>
             <div>
                 <a href="formNovoMembro.html?idSede=${sede.id}">Novo Membro</a>

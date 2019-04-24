@@ -1,6 +1,5 @@
 <%@page pageEncoding="utf-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,18 +8,13 @@
 </head>
 <body>
     <div>
-    
         <h1>Relatório</h1>
-        <div >
-                    Duração Total: ${duracaoTotal}
-                    <br>
-                    Duração Jurídica: ${duracaoJuridica}
-                    <br>
-                    Duração Assistencial: ${duracaoAssistencial}
-                    <br>
-                    Duração Financeira: ${duracaoFinanceira}
-                    <br>
-                    Duração Executiva: ${duracaoExecutiva}
+        <div>
+            Duração Jurídica: ${duracaoJuridica}<br><br>
+            Duração Assistencial: ${duracaoAssistencial}<br><br>
+            Duração Financeira: ${duracaoFinanceira}<br><br>
+            Duração Executiva: ${duracaoExecutiva}<br><br>
+            Duração Total: ${duracaoTotal}<br><br>
         </div>      
         <div >
             <a href="sedeView.html?id=${id}">Voltar</a>    

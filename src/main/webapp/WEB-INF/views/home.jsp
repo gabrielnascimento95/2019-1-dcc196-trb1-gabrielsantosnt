@@ -20,11 +20,12 @@
     
         <div class="form-group"> 
 
-        <h2>Sedes </h2>
+        <h2>Sedes</h2>
             <ul id="sede" name="sede">      
                 <c:forEach var="sede" items="${sedes}">         
                     <li value="${sede.id}">
-                    <a href="sedeView.html?id=${sede.id}"> ${sede.nome}</a>        
+                    ${sede.nome}    
+                    <a href="sedeView.html?id=${sede.id}"> Visualizar</a>        
                     <a href="formDeletaSede.html?id=${sede.id}">Excluir</a>   
                 </c:forEach>   
             </ul>      
