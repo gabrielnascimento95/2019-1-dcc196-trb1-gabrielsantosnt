@@ -5,14 +5,8 @@
 <head>
     <meta charset="utf-8">
     <title>Novo Membro</title>
-    <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
 </head>
 <body>
-    <script>
-        $(document).ready(function () { 
-            document.getElementById("idSede").value = "${idSede}";
-        });
-    </script>
     <div>
         <h1>Novo Membro</h1>
         <form role="form" action="formNovoMembroSubmit.html" method="POST">
@@ -42,7 +36,7 @@
                     <input type="text" id="dataSaida" name="dataSaida"/>
                 </div>
             </div>
-            <input type="hidden" id="idSede" name="idSede"/>
+            <input type="hidden" id="idSede" name="idSede" value="${sede.id}"/>
             <input type="submit" value="Salvar" />
         </form>
     </div>
