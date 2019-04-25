@@ -5,8 +5,21 @@
 <head>
     <meta charset="utf-8">
     <title>Editar Sede</title>
+    <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
 </head>
 <body>
+        <script>   
+                $(document).ready(function () { 
+                
+                    document.getElementById("nome").value = "${sede.nome}";
+                    document.getElementById("estado").value = "${sede.estado}";
+                    document.getElementById("cidade").value = "${sede.cidade}";
+                    document.getElementById("bairro").value = "${sede.bairro}";
+                    document.getElementById("telefone").value = "${sede.telefone}";
+                    document.getElementById("url").value = "${sede.url}";
+                    document.getElementById("id").value = "${sede.id}";
+                });
+            </script>
     
     <div>
         <h1>Editar Sede</h1>

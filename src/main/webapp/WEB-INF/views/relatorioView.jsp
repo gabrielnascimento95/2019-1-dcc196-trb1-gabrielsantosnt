@@ -25,7 +25,7 @@
         </div>      
     </div>    
     <div >
-        <a href="sedeView.html?id=${id}">Voltar</a>    
+        <a href="index.html">Voltar</a>    
     </div>      
 </body>
 </html>

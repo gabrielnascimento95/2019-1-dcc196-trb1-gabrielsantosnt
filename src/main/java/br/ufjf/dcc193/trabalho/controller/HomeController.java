@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -113,7 +114,6 @@ public class HomeController {
     @RequestMapping("formNovoMembro.html")
     public ModelAndView formNovoMembro(@RequestParam Long idSede){
         ModelAndView mv = new ModelAndView();
-        System.err.println(idSede);
         mv.addObject("idSede", idSede);
         return mv;
     }
@@ -124,6 +124,7 @@ public class HomeController {
         Sede sede1 = Sedes.getOne(idSede);
         sede1.addMembro(membro);
         Sedes.save(sede1);
+        System.err.println("ID ----->"+idSede);
         return new RedirectView("sedeView.html?id=" + idSede);
     }
 
@@ -144,7 +145,6 @@ public class HomeController {
     @RequestMapping("formNovaAtividade.html")
     public ModelAndView formNovaAtividade(@RequestParam Long idSede){
         ModelAndView mv = new ModelAndView();
-        System.err.println(idSede);
         mv.addObject("idSede", idSede);
         return mv;
     }
@@ -228,7 +228,7 @@ public class HomeController {
     */
 
     @RequestMapping("relatorioView.html")
-    public ModelAndView relatorioView(@RequestParam Long id){
+    public ModelAndView relatorioView(){
         ModelAndView mv = new ModelAndView();
         int duracao = 0;
         List<Sede> listSedes = Sedes.findAll();
@@ -241,7 +241,7 @@ public class HomeController {
             listTempoTotal.add(duracao);
             duracao = 0;
         }
-        mv.setViewName("relatorio");
+        mv.setViewName("relatorioView");
         mv.addObject("sedes", listSedes);
         mv.addObject("tempoTotal", listTempoTotal);
         return mv;

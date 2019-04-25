@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Nova Atividade</title>
+    <title>Nova Atividade</title> 
 </head>
 <body>
     <div>
@@ -45,7 +45,7 @@
                     </select>
                 </div>
             </div>
-            <input type="hidden" id="idSede" name="idSede"/>
+            <input type="hidden" id="idSede" name="idSede" value="${idSede}"/>
             <input type="submit" value="Salvar" />
         </form>
     </div>

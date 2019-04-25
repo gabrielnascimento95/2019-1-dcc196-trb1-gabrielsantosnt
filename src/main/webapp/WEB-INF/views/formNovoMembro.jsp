@@ -5,8 +5,14 @@
 <head>
     <meta charset="utf-8">
     <title>Novo Membro</title>
+    <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
 </head>
 <body>
+    <script>
+        $(document).ready(function () { 
+            document.getElementById("idSede").value = "${idSede}";
+        });
+    </script>
     <div>
         <h1>Novo Membro</h1>
         <form role="form" action="formNovoMembroSubmit.html" method="POST">

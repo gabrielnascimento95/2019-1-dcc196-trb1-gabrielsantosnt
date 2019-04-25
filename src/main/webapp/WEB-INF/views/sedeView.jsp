@@ -20,6 +20,20 @@
             </ul>           
         </div>
         <div>
+                <div>
+                    <a href="relatorioView.html?id=${sede.id}">Relatório</a>
+                </div>
+                <div>
+                    <a href="index.html">Voltar</a> 
+                </div>
+                <div>
+                    <a href="formNovoMembro.html?idSede=${sede.id}">Novo Membro</a>
+                </div> 
+                <div>
+                    <a href="formNovaAtividade.html?idSede=${sede.id}">Nova Atividade</a>
+                 </div>          
+        </div>
+        <div>
             <form role="form" action="formEditaSede.html?id=${sede.id}" method="POST">
                 <input type="submit" value="Editar"/>
             </form>
@@ -43,24 +57,8 @@
                 </ul>      
             </div>
         <div>
-            <div>
-                <a href="formNovoMembro.html?idSede=${sede.id}">Novo Membro</a>
-            </div> 
-            <div>
-                <a href="formNovaAtividade.html?idSede=${sede.id}">Nova Atividade</a>
-            </div> 
+            
         </div>
-        
-        <div>
-            <div>
-                <a href="relatorioView.html?id=${sede.id}">Relatório</a>
-            </div>
-            <div>
-                <a href="index.html">Voltar</a> 
-            </div>
-                       
-        </div>
-
     </div>
 </body>
 </html>
