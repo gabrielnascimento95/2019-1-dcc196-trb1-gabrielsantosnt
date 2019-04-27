@@ -8,24 +8,29 @@
 </head>
 <body>
     <div>
-        <h1>Relatório Completo</h1>
+        <h1>Relatório Completo</h1>   
+    </div>
+    <div>
+    <table border="1" style="width:100%">
+        <tr>
+            <th><a href="index.html">Home</a></th>
+        </table>  
+    </div>
         <div>
-            <ul id="listaSede" name="listaSede">      
-                <c:forEach var="item" items="${sedes}">         
-                    <li value="${item.id}"> ${sede.nome}     
-                </c:forEach>
-            </ul>
+        <ul id="sede" name="sede">      
+            <c:forEach var="sede" items="${sedes}">         
+                <li value="${sede.id}"> ${sede.nome}     
+            </c:forEach>
+        </ul>
         </div>
-        <div>
-            <ul id="listaDuracao" name="listaDuracao">      
-                <c:forEach var="item" items="${tempoTotal}">         
-                    <li value="${item}"> ${duracao}     
-                </c:forEach>
-            </ul>
+        <div >
+        <ul id="tempoTotal" name="tempoTotal">      
+            <c:forEach var="tempo" items="${tempoTotal}">         
+                <li value="${tempo}"> ${tempo} minuto(s)    
+            </c:forEach>
+        </ul>
         </div>      
-    </div>    
-    <div >
-        <a href="index.html">Voltar</a>    
-    </div>      
+    </div>
+          
 </body>
 </html>
