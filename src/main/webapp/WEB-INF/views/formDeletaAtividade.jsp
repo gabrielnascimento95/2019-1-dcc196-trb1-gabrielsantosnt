@@ -7,16 +7,9 @@
     <title>Exclusão</title>
 </head>
 <body>
+    <h1>Exclusão concluída</h1>
     <div>
-    
-        <h1>Exclusão concluída</h1>
-
-        <div>
-            <div>
-                <a href="sedeView.html?id=${idSede}">Voltar</a>           
-            </div>
-
+        <a href="sedeView.html?id=${idSede}">Voltar</a>           
     </div>
-
 </body>
 </html>

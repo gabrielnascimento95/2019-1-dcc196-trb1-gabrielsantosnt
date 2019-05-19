@@ -26,9 +26,9 @@ public class Sede {
     private String telefone;
     private String url;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Membro> listMembros;
+    private List<Membro> membros;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Atividade> listAtividades;
+    private List<Atividade> atividades;
 
     public Sede(){
 
@@ -41,8 +41,8 @@ public class Sede {
         this.bairro = bairro;
         this.telefone = telefone;
         this.url = url;
-        listMembros = new ArrayList<Membro>();
-        listAtividades = new ArrayList<Atividade>();
+        membros = new ArrayList<Membro>();
+        atividades = new ArrayList<Atividade>();
     }
 
     /**
@@ -145,51 +145,51 @@ public class Sede {
 
     @Override
     public String toString() {
-        return "Sede [nome=" + nome + "]";
+        return "Sede [id="+id +", nome=" + nome +"]";
     }
     
     /**
      * @return the membros
      */
     public List<Membro> getMembros() {
-        return listMembros;
+        return membros;
     }
 
     /**
      * @param membros the membros to set
      */
     public void setMembros(List<Membro> membros) {
-        this.listMembros = membros;
+        this.membros = membros;
     }
 
     public void addMembro(Membro membro){
-        this.listMembros.add(membro);
+        this.membros.add(membro);
     }
 
     public void removeMembro(Membro membro){
-        this.listMembros.remove(membro);
+        this.membros.remove(membro);
     }
     
     /**
      * @return the atividades
      */
     public List<Atividade> getAtividades() {
-        return listAtividades;
+        return atividades;
     }
     
     /**
      * @param atividades the atividades to set
      */
     public void setAtividades(List<Atividade> atividades) {
-        this.listAtividades = atividades;
+        this.atividades = atividades;
     }
 
     public void addAtividade(Atividade atividade){
-        this.listAtividades.add(atividade);
+        this.atividades.add(atividade);
     }
 
     public void removeAtividade(Atividade atividade){
-        this.listAtividades.remove(atividade);
+        this.atividades.remove(atividade);
     }
 
     

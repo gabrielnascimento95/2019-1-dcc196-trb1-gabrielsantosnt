@@ -4,11 +4,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Nova Atividade</title>
+    <title>Nova Atividade</title> 
 </head>
 <body>
     <div>
-        <h1>Formulário: Nova Atividade</h1>
+        <h1>Nova Atividade</h1>
         <form role="form" action="formNovaAtividadeSubmit.html" method="POST">
             <div>
                 <div >
@@ -16,7 +16,7 @@
                     <input type="text" id="titulo" name="titulo"/>
                 </div>
                 <div >
-                    <label>Descrição </label> 
+                    <label>Descrição</label> 
                     <input type="text" id="descricao" name="descricao"/>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                     </select>
                 </div>
             </div>
-            <input type="hidden" id="idSede" name="idSede"/>
+            <input type="hidden" id="idSede" name="idSede" value="${idSede}"/>
             <input type="submit" value="Salvar" />
         </form>
     </div>
