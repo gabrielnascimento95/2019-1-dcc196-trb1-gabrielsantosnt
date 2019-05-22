@@ -48,7 +48,7 @@
             <div class="col-sm-1">
                 <ul class="list-group" id="tempoTotal" name="tempoTotal">
                     <c:forEach var="tempo" items="${tempoTotal}">
-                        <li class="list-group-item"> -> </li>
+                        <li class="list-group-item"> - > </li>
                     </c:forEach>
                 </ul>
             </div>
