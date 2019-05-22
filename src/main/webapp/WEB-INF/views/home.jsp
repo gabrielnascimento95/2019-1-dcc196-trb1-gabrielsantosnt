@@ -33,7 +33,7 @@
 			</div>
 			<a href="#"><input type="button" value="Sair" class="btn btn-danger" /></a>
         </nav>   
-        <h4 style="text-align: center">Sedes</h4>
+        <h4 style="text-align: center">Painel de controle</h4>
         <table class="table table-striped" id="sede" name="sede">
 			<thead class="thead-light">
 				<tr style="text-align: center">
