@@ -38,7 +38,7 @@
             <a href="#"><input type="button" value="Sair" class="btn btn-danger" /></a>
         </nav>
         <br />
-        <h3 style="text-align: center">Exclusão concluída</h3>
+        <h3 style="text-align: center">Exclusão de sede concluída com sucesso!</h3>
     </div>
         <footer class="page-footer font-small">
             <div class="text-center py-3">

@@ -131,7 +131,7 @@ public class HomeController {
     public ModelAndView formDeletaMembro(@RequestParam Long id, @RequestParam Long idSede){
         ModelAndView mv = new ModelAndView();
         mv.addObject("idSede", idSede);
-        mv.setViewName("deletamembro");
+        mv.setViewName("formDeletaMembro");
         Membro membro = Membros.getOne(id);
         Sede auxSede = Sedes.getOne(idSede);
         auxSede.removeMembro(membro);
