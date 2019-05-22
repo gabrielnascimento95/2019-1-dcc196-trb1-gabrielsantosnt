@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Wed May 22 10:23:00 BRT 2019:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016a-dfb5-91df-00000b2abaa8 
-on database directory C:\Users\estagiarioti2\Documents\Desenvolvimento\2019-1-dcc196-trb1-gabrielsantosnt\~\teste.db with class loader sun.misc.Launcher$AppClassLoader@764c12b6 
-Loaded from file:/C:/Users/estagiarioti2/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+Wed May 22 16:21:04 BRT 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016a-e0fd-5eea-000003eff620 
+on database directory /home/gabriel/Documentos/Desenvolvimento Web/2019-1-dcc196-trb1-gabrielsantosnt/~/teste.db with class loader sun.misc.Launcher$AppClassLoader@764c12b6 
+Loaded from file:/home/gabriel/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_211-b12
-user.dir=C:\Users\estagiarioti2\Documents\Desenvolvimento\2019-1-dcc196-trb1-gabrielsantosnt
-os.name=Windows 10
+java.runtime.version=1.8.0_201-b09
+user.dir=/home/gabriel/Documentos/Desenvolvimento Web/2019-1-dcc196-trb1-gabrielsantosnt
+os.name=Linux
 os.arch=amd64
-os.version=10.0
+os.version=4.4.0-148-generic
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
