@@ -36,7 +36,7 @@
                     <input type="text" id="dataSaida" name="dataSaida"/>
                 </div>
             </div>
-            <input type="hidden" id="idSede" name="idSede" value="${sede.id}"/>
+            <input type="hidden" id="idSede" name="idSede" value="${idSede}"/>
             <input type="submit" value="Salvar" />
         </form>
     </div>
