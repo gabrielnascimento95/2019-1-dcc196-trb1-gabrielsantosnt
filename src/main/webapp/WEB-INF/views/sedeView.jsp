@@ -35,9 +35,6 @@
                     <a href="relatorioView.html" class="nav-item nav-link">Relatório</a>
                 </div>
             </div>
-            <form role="form" action="formEditaSede.html?id=${sede.id}" method="POST">
-                <input type="submit" class="btn btn-warning" value="Editar" />
-            </form>
             <a href="#"><input type="button" value="Sair" class="btn btn-danger" /></a>
         </nav>
         <br/>
@@ -53,6 +50,11 @@
             <div class="col-sm-6">
                     <li class="list-group-item"><b>Telefone: </b>${sede.telefone}</li>
                     <li class="list-group-item"><b>URL: </b>${sede.url}</li>
+                    <li class="list-group-item">
+                        <form role="form" action="formEditaSede.html?id=${sede.id}" method="POST">
+                            <input type="submit" class="btn btn-warning" value="Editar" />
+                        </form>
+                    </li>
             </div>
         </div>
         <h4 style="text-align: center">Membros</h4>

@@ -37,7 +37,7 @@
         <h3>Cadastro - Novo membro</h3>
         <form role="form" action="formNovoMembroSubmit.html" method="POST">
             <div class="form-group">
-                <label for="nome">Nome</label>Função
+                <label for="nome">Nome</label>
                 <input type="text" class="form-control" id="nome" name="nome" aria-describedby="helpNome"
                     placeholder="Seu nome">
                 <small id="helpNome" class="form-text text-muted">Digite o nome conforme RG.</small>
